@@ -1,0 +1,4 @@
+wheel==0.24.0
+https+git://github.com/mitsuhiko/flask.git#egg=flask
+Sphinx==1.2.2
+pytest==2.6.1
