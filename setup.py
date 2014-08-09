@@ -47,7 +47,7 @@ setup(
     include_package_data=True,
     platforms='any',
     install_requires=['Flask'],
-    tests_require=['pytest'],
+    tests_require=['pytest', 'pytest-cov', 'mock'],
     cmdclass={
         'test': PyTest
     },

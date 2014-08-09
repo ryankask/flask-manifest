@@ -4,6 +4,7 @@ help:
 	@echo "clean-build - remove build artifacts"
 	@echo "clean-pyc - remove Python file artifacts"
 	@echo "test - run tests quickly with the default Python"
+	@echo "coverage - run tests and output coverage"
 	@echo "test-all - run tests on every Python version with tox"
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
 	@echo "release - package and upload a release"
@@ -24,6 +25,9 @@ clean-pyc:
 
 test:
 	python setup.py test
+
+coverage:
+	python setup.py test --pytest-args "--cov flask_manifest"
 
 test-all:
 	tox

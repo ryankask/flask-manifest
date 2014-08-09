@@ -3,6 +3,8 @@ import os
 from flask import (json, send_from_directory, current_app,
                    url_for as flask_url_for)
 
+__all__ = ['Manifest']
+
 CONFIG_PREFIX = 'MANIFEST_'
 DEFAULT_CONFIG = {
     'MANIFEST_DEBUG': False,
@@ -11,7 +13,7 @@ DEFAULT_CONFIG = {
     'MANIFEST_FILENAME': 'rev-manifest.json',
     'MANIFEST_ENDPOINT': 'manifest-dist',
     'MANIFEST_URL_PATH': '/dist',
-    'MANIFEST_CND_NAME': None,
+    'MANIFEST_DOMAIN': None,
 }
 FOREVER = 10 * 365 * 24 * 60 * 60
 EXTENSION_KEY = 'manifest'
@@ -40,8 +42,7 @@ def url_for(endpoint, **values):
             if state.serve_root:
                 endpoint = state.endpoint
             else:
-                # TODO: Handle external domains like CDNs or integrate
-                # with Flask-CDN
+                # TODO: Handle external domains
                 values['_external'] = True
 
     return flask_url_for(endpoint, **values)
