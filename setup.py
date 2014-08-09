@@ -35,7 +35,7 @@ class PyTest(TestCommand):
 
 setup(
     name='Flask-Manifest',
-    version='0.1.0',
+    version='0.2.0',
     url='https://github.com/ryankask/flask-manifest',
     license='BSD',
     author='Ryan Kaskel',
